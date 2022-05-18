@@ -1,0 +1,6 @@
+# File auto generated with CMake qt_generate_qmldir. Run CMake to regenerate if files changed.
+
+module SpeedNote.SpeedNote.Controlleur
+
+BaseControlleur 1.0 BaseControlleur.qml
+ClientControlleur 1.0 ClientControlleur.qml

@@ -1,0 +1,6 @@
+# File auto generated with CMake qt_generate_qmldir. Run CMake to regenerate if files changed.
+
+module SpeedNote.SpeedNote.Model
+
+singleton Database 1.0 Database.qml
+singleton Note 1.0 Note.qml

@@ -1,0 +1,8 @@
+# File auto generated with CMake qt_generate_qmldir. Run CMake to regenerate if files changed.
+
+module SpeedNote.SpeedNote.Services
+
+Form 1.0 Form.qml
+singleton Log 1.0 Log.qml
+Service 1.0 Service.qml
+singleton Util 1.0 Util.qml

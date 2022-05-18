@@ -1,0 +1,30 @@
+# File auto generated with CMake qt_generate_qmldir. Run CMake to regenerate if files changed.
+
+module SpeedNote.SpeedNote.Components
+
+BButton 1.0 BButton.qml
+BContainer 1.0 BContainer.qml
+BCrossBehavior 1.0 BCrossBehavior.qml
+BDialog 1.0 BDialog.qml
+BDialogButton 1.0 BDialogButton.qml
+BFadeBehavior 1.0 BFadeBehavior.qml
+BFloatButton 1.0 BFloatButton.qml
+BHomeAppButton 1.0 BHomeAppButton.qml
+BIconLabel 1.0 BIconLabel.qml
+BItemDelegate 1.0 BItemDelegate.qml
+BOutlineTextField 1.0 BOutlineTextField.qml
+BPage 1.0 BPage.qml
+BPopup 1.0 BPopup.qml
+BSearchBar 1.0 BSearchBar.qml
+BStackView 1.0 BStackView.qml
+BTabBar 1.0 BTabBar.qml
+BTabBarButton 1.0 BTabBarButton.qml
+ComboBox 1.0 ComboBox.qml
+DR 1.0 DR.qml
+DelegateItem 1.0 DelegateItem.qml
+MAppBarButton 1.0 MAppBarButton.qml
+MenuSelector 1.0 MenuSelector.qml
+ProgressIndicator 1.0 ProgressIndicator.qml
+TextArea 1.0 TextArea.qml
+TextField 1.0 TextField.qml
+TextLabel 1.0 TextLabel.qml

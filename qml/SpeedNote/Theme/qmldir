@@ -1,0 +1,8 @@
+# File auto generated with CMake qt_generate_qmldir. Run CMake to regenerate if files changed.
+
+module SpeedNote.SpeedNote.Theme
+
+BaseColorTheme 1.0 BaseColorTheme.qml
+DarkColorTheme 1.0 DarkColorTheme.qml
+LightColorTheme 1.0 LightColorTheme.qml
+singleton Style 1.0 Style.qml

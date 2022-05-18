@@ -1,0 +1,11 @@
+# File auto generated with CMake qt_generate_qmldir. Run CMake to regenerate if files changed.
+
+module SpeedNote.SpeedNote.Providers
+
+singleton DateProvider 1.0 DateProvider.qml
+FontProvider 1.0 FontProvider.qml
+singleton Fonts 1.0 Fonts.qml
+singleton Icons 1.0 Icons.qml
+singleton RobotoDefaultFonts 1.0 RobotoDefaultFonts.qml
+singleton RobotoFonts 1.0 RobotoFonts.qml
+StorageModel 1.0 StorageModel.qml
