@@ -6,17 +6,30 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-if(WIN32)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /Zc:__cplusplus /permissive-")
-endif()
 
-find_package(Qt6 COMPONENTS Quick QuickControls2 Svg Xml Network WebSockets REQUIRED)
+find_package(Qt6 COMPONENTS Core Quick QuickControls2 Svg Xml Network REQUIRED)
 
 include(cmake/dependencie.cmake)
 include(cmake/ressource.cmake)
 
+set(ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android)
+set(QTAT_SHARING ON)
+add_subdirectory(QtAndroidTools)
+add_subdirectory(quickflux)
 
-qt_add_executable(Desktop
+include_directories(quickflux/src)
+
+if(ANDROID)
+    set(ANDROID_DEPENDS
+        android/AndroidManifest.xml
+        android/build.gradle
+        android/gradle.properties
+    )
+else()
+    set(ANDROID_DEPENDS "")
+endif()
+
+qt_add_executable(DailyNote
     main.cpp
     src/SpeedNote/watcher.h
     src/SpeedNote/watcher.cpp
@@ -25,10 +38,15 @@ qt_add_executable(Desktop
     src/SpeedNote/androidtheme.cpp
     src/SpeedNote/utils.h
     src/SpeedNote/utils.cpp
+    src/SpeedNote/documenthandler.h
+    src/SpeedNote/documenthandler.cpp
     ${SpeedNote_UI_QML_RES}
+    ${ANDROID_DEPENDS}
 )
 
-target_link_libraries(Desktop
+set_property(TARGET DailyNote APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android)
+
+target_link_libraries(DailyNote
     PRIVATE
     Qt::Quick
     Qt::Quick
@@ -36,7 +54,13 @@ target_link_libraries(Desktop
     Qt::Xml
     Qt::QuickControls2
     Qt::Network
-    Qt::WebSockets
+    Qt::Core
     Qaterial
     SortFilterProxyModel
+    QtAndroidTools
+    QuickFlux::quickflux
 )
+
+install(TARGETS DailyNote
+    BUNDLE DESTINATION .
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})

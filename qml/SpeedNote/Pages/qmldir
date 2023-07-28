@@ -2,6 +2,10 @@
 
 module SpeedNote.SpeedNote.Pages
 
+singleton ActionTypes 1.0 ActionTypes.qml
+singleton AppAction 1.0 AppAction.qml
 Home 1.0 Home.qml
-Modules 1.0 Modules.qml
 NewNote 1.0 NewNote.qml
+NoteList 1.0 NoteList.qml
+NoteMiddleware 1.0 NoteMiddleware.qml
+NoteView 1.0 NoteView.qml

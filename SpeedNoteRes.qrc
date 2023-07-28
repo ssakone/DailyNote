@@ -1,0 +1,51 @@
+<!-- File auto generated with CMake qt_generate_qrc. Everything written here will be lost. -->
+<RCC>
+  <qresource prefix="/">
+    <file alias="SpeedNote/Ressources/Fonts/Montserrat-Black.ttf">qml/SpeedNote/Ressources/Fonts/Montserrat-Black.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Montserrat-Bold.ttf">qml/SpeedNote/Ressources/Fonts/Montserrat-Bold.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Montserrat-ExtraBold.ttf">qml/SpeedNote/Ressources/Fonts/Montserrat-ExtraBold.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Montserrat-ExtraLight.ttf">qml/SpeedNote/Ressources/Fonts/Montserrat-ExtraLight.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Montserrat-Italic.ttf">qml/SpeedNote/Ressources/Fonts/Montserrat-Italic.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Montserrat-Light.ttf">qml/SpeedNote/Ressources/Fonts/Montserrat-Light.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Montserrat-Medium.ttf">qml/SpeedNote/Ressources/Fonts/Montserrat-Medium.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Montserrat-Regular.ttf">qml/SpeedNote/Ressources/Fonts/Montserrat-Regular.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Montserrat-Thin.ttf">qml/SpeedNote/Ressources/Fonts/Montserrat-Thin.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Montserrat-ThinItalic.ttf">qml/SpeedNote/Ressources/Fonts/Montserrat-ThinItalic.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Roboto/Roboto-Black.ttf">qml/SpeedNote/Ressources/Fonts/Roboto/Roboto-Black.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Roboto/Roboto-BlackItalic.ttf">qml/SpeedNote/Ressources/Fonts/Roboto/Roboto-BlackItalic.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Roboto/Roboto-Bold.ttf">qml/SpeedNote/Ressources/Fonts/Roboto/Roboto-Bold.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Roboto/Roboto-BoldItalic.ttf">qml/SpeedNote/Ressources/Fonts/Roboto/Roboto-BoldItalic.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Roboto/Roboto-Italic.ttf">qml/SpeedNote/Ressources/Fonts/Roboto/Roboto-Italic.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Roboto/Roboto-Light.ttf">qml/SpeedNote/Ressources/Fonts/Roboto/Roboto-Light.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Roboto/Roboto-LightItalic.ttf">qml/SpeedNote/Ressources/Fonts/Roboto/Roboto-LightItalic.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Roboto/Roboto-Medium.ttf">qml/SpeedNote/Ressources/Fonts/Roboto/Roboto-Medium.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Roboto/Roboto-MediumItalic.ttf">qml/SpeedNote/Ressources/Fonts/Roboto/Roboto-MediumItalic.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Roboto/Roboto-Regular.ttf">qml/SpeedNote/Ressources/Fonts/Roboto/Roboto-Regular.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Roboto/Roboto-Thin.ttf">qml/SpeedNote/Ressources/Fonts/Roboto/Roboto-Thin.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Roboto/Roboto-ThinItalic.ttf">qml/SpeedNote/Ressources/Fonts/Roboto/Roboto-ThinItalic.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf">qml/SpeedNote/Ressources/Fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Roboto_Condensed/RobotoCondensed-BoldItalic.ttf">qml/SpeedNote/Ressources/Fonts/Roboto_Condensed/RobotoCondensed-BoldItalic.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Roboto_Condensed/RobotoCondensed-Italic.ttf">qml/SpeedNote/Ressources/Fonts/Roboto_Condensed/RobotoCondensed-Italic.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Roboto_Condensed/RobotoCondensed-Light.ttf">qml/SpeedNote/Ressources/Fonts/Roboto_Condensed/RobotoCondensed-Light.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Roboto_Condensed/RobotoCondensed-LightItalic.ttf">qml/SpeedNote/Ressources/Fonts/Roboto_Condensed/RobotoCondensed-LightItalic.ttf</file>
+    <file alias="SpeedNote/Ressources/Fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf">qml/SpeedNote/Ressources/Fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf</file>
+    <file alias="SpeedNote/Ressources/Icons/arrow-back.svg">qml/SpeedNote/Ressources/Icons/arrow-back.svg</file>
+    <file alias="SpeedNote/Ressources/Icons/backgroundY.png">qml/SpeedNote/Ressources/Icons/backgroundY.png</file>
+    <file alias="SpeedNote/Ressources/Icons/boite.svg">qml/SpeedNote/Ressources/Icons/boite.svg</file>
+    <file alias="SpeedNote/Ressources/Icons/caisse.svg">qml/SpeedNote/Ressources/Icons/caisse.svg</file>
+    <file alias="SpeedNote/Ressources/Icons/cart_outline.svg">qml/SpeedNote/Ressources/Icons/cart_outline.svg</file>
+    <file alias="SpeedNote/Ressources/Icons/client_card.png">qml/SpeedNote/Ressources/Icons/client_card.png</file>
+    <file alias="SpeedNote/Ressources/Icons/facture_paper.svg">qml/SpeedNote/Ressources/Icons/facture_paper.svg</file>
+    <file alias="SpeedNote/Ressources/Icons/faire-defiler.svg">qml/SpeedNote/Ressources/Icons/faire-defiler.svg</file>
+    <file alias="SpeedNote/Ressources/Icons/menu.svg">qml/SpeedNote/Ressources/Icons/menu.svg</file>
+    <file alias="SpeedNote/Ressources/Icons/noActivity.png">qml/SpeedNote/Ressources/Icons/noActivity.png</file>
+    <file alias="SpeedNote/Ressources/Icons/panier.svg">qml/SpeedNote/Ressources/Icons/panier.svg</file>
+    <file alias="SpeedNote/Ressources/Icons/pattern.png">qml/SpeedNote/Ressources/Icons/pattern.png</file>
+    <file alias="SpeedNote/Ressources/Icons/portefeuille.svg">qml/SpeedNote/Ressources/Icons/portefeuille.svg</file>
+    <file alias="SpeedNote/Ressources/Icons/produit_list.svg">qml/SpeedNote/Ressources/Icons/produit_list.svg</file>
+    <file alias="SpeedNote/Ressources/Icons/produit_tag.svg">qml/SpeedNote/Ressources/Icons/produit_tag.svg</file>
+    <file alias="SpeedNote/Ressources/Icons/question.png">qml/SpeedNote/Ressources/Icons/question.png</file>
+    <file alias="SpeedNote/Ressources/Icons/search.svg">qml/SpeedNote/Ressources/Icons/search.svg</file>
+    <file alias="SpeedNote/Ressources/Icons/stock_box.svg">qml/SpeedNote/Ressources/Icons/stock_box.svg</file>
+  </qresource>
+</RCC>

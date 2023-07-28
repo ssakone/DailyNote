@@ -5,7 +5,7 @@
 #include <QColor>
 #include <QGuiApplication>
 #include <QObject>
-#include <QtCore/QJniObject>
+#include <QJniObject>
 class AndroidTheme : public QObject
 {
     Q_OBJECT

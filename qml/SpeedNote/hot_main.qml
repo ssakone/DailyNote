@@ -13,36 +13,15 @@ import SpeedNote.Model as Model
 import SpeedNote.Pages
 import SpeedNote.Services
 
-import Qt.labs.settings
+import QtCore
 
 import Watcher
 
 Item {
     id: root
 
-
-
-    property var caisse: {
-        total: 0
-    }
-    property var current_selected_depense: {
-        total: 0
-    }
-    property int vente_total: 0
-    property bool logged: true
-    property bool debug: false
-    property int currentStockId: 1
-
-    anchors.fill: parent
-
     Settings {
         id: application_setting
-        property alias logged: root.logged
-        property alias current_stock_id: root.currentStockId
-        property string user_first_name
-        property string user_last_name
-        property string user_business_name
-        property int user_business_type
     }
 
     AndroidTheme {
@@ -54,15 +33,11 @@ Item {
 
     Providers.FontProvider {
         id: font_provider
-        Component.onCompleted: {
-            console.log(rR.name)
-        }
     }
 
-    Controls.BStackView {
+    Qaterial.DepthStackView {
         id: m_view
-        enabled: root.logged
-        visible: enabled
+        anchors.fill: parent
         initialItem: m_home
     }
 
@@ -78,16 +53,6 @@ Item {
         }
     }
 
-    Connections {
-        enabled: root.logged
-        target: Model.Caisse
-        function onUpdated() {
-            loadCaisse()
-        }
-        function onCreated() {
-            loadCaisse()
-        }
-    }
 
     Home {
         id: m_home
@@ -96,25 +61,9 @@ Item {
     Image {
         anchors.fill: parent
         fillMode: Image.PreserveAspectCrop
-        opacity: root.logged ? 0.07 : .2
+        opacity: .05
         source: Providers.Icons.backgroundY
     }
-
-    Controls.BDialog {
-        title: 'Basic dialog title'
-        message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet venenatis purus.'
-        alignCenter: false
-        dialogButtons: [
-            Controls.BDialogButton {
-                text: 'Accepter'
-            },
-            Controls.BDialogButton {
-                text: 'Accepter'
-            }
-        ]
-
-    }
-
 
     Component.onCompleted: {
         Theme.Style.theme = Theme.Style.Theme.Light

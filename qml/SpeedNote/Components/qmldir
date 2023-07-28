@@ -24,6 +24,7 @@ DR 1.0 DR.qml
 DelegateItem 1.0 DelegateItem.qml
 MAppBarButton 1.0 MAppBarButton.qml
 MenuSelector 1.0 MenuSelector.qml
+NativeTextArea 1.0 NativeTextArea.qml
 ProgressIndicator 1.0 ProgressIndicator.qml
 TextArea 1.0 TextArea.qml
 TextField 1.0 TextField.qml

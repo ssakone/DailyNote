@@ -1,11 +1,14 @@
 #include "src/SpeedNote/androidtheme.h"
-#include "src/SpeedNote/watcher.h"
+#include "src/SpeedNote/documenthandler.h"
 #include "src/SpeedNote/utils.h"
+#include "src/SpeedNote/watcher.h"
 #include <QFont>
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <Qaterial/Qaterial.hpp>
+#include <QuickFlux>
+#include "QtAndroidTools/QtAndroidTools.h"
 #if defined(Q_OS_WINDOWS)
 //#define HOT_RELOAD
 #endif
@@ -15,14 +18,22 @@ int main(int argc, char *argv[])
 
     app.setOrganizationName("01Studio");
     app.setOrganizationDomain("01Studio.io");
-    app.setApplicationName("Business Mobile");
+    app.setApplicationName("Daily Note");
+
+    QtAndroidTools::initializeQmlTools();
+
     QFont fon("Roboto");
     app.setFont(fon);
-    QQmlApplicationEngine engine;
 
     Q_INIT_RESOURCE(SpeedNote);
 
+    QQmlApplicationEngine engine;
+    engine.rootContext()->setContextProperty("devMode", QVariant(false));
+    engine.rootContext()->setContextProperty("hot_reload_server_ip", QVariant("localhost"));
     engine.addImportPath("qrc:///");
+
+    qmlRegisterType<DocumentHandler>("TextEditor", 1, 0, "DocumentHandler");
+    registerQuickFluxQmlTypes();
 
 #if defined(HOT_RELOAD)
     QString hot_reload_server_ip("localhost");
@@ -30,11 +41,11 @@ int main(int argc, char *argv[])
     //QString hot_reload_server_ip("192.168.1.18");
     engine.addImportPath("http://" + hot_reload_server_ip + ":8000/qml/");
 #elif defined(Q_OS_WINDOWS)
-    engine.addImportPath("E:/PRIMARY/01STUDIO/SpeedNote/qml/");
+    engine.addImportPath("E:/PRIMARY/ME/SpeedNote/qml/");
 #elif defined(Q_OS_ANDROID)
     engine.addImportPath("qrc:/qml/");
 #elif defined(Q_OS_LINUX)
-    engine.addImportPath("/home/enokas/Workstation/01STUDIO/SpeedNote/qml/");
+    engine.addImportPath("qrc:/qml/");
 #endif
     qaterial::loadQmlResources();
     qaterial::registerQmlTypes();
@@ -45,11 +56,11 @@ int main(int argc, char *argv[])
     const QUrl url("qrc:/qml/SpeedNote/main.qml");
     engine.rootContext()->setContextProperty("devMode", true);
 #elif defined(Q_OS_WINDOWS)
-    const QUrl url("file:///E:/PRIMARY/01STUDIO/SpeedNote/qml/SpeedNote/main.qml");
+    const QUrl url("file:///E:/PRIMARY/ME/SpeedNote/qml/SpeedNote/main.qml");
 #elif defined(Q_OS_ANDROID)
     const QUrl url("qrc:/qml/SpeedNote/main.qml");
 #elif defined(Q_OS_LINUX)
-    const QUrl url("file:////home/enokas/Workstation/01STUDIO/SpeedNote/qml/SpeedNote/main.qml");
+    const QUrl url("qrc:/qml/SpeedNote/main.qml");
 #endif
 
     QObject::connect(
@@ -68,6 +79,9 @@ int main(int argc, char *argv[])
 #else
     engine.rootContext()->setContextProperty("devMode", QVariant(false));
 #endif
+
+    QFAppDispatcher* dispatcher = QFAppDispatcher::instance(&engine);
+    dispatcher->dispatch("startApp");
 
     return app.exec();
 }

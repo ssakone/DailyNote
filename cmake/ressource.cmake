@@ -4,7 +4,7 @@ file(REMOVE qml/SpeedNote/Providers/Icons.qml qml/SpeedNote/Providers/Fonts.qml)
 qt_generate_qrc(
   SpeedNote_RES_QRC
   SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/qml
-  DEST_DIR ${CMAKE_CURRENT_BINARY_DIR}
+  DEST_DIR ${CMAKE_CURRENT_SOURCE_DIR}
   NAME "SpeedNoteRes.qrc"
   PREFIX ""
   GLOB_EXPRESSION "*.svg" "*.png" "*.gif" "*.ttf"
@@ -51,7 +51,7 @@ qt_generate_qrc_alias_qt_object(
 
 qt_generate_qrc(SpeedNote_QML_QRC
   SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/qml
-  DEST_DIR ${CMAKE_CURRENT_BINARY_DIR}
+  DEST_DIR ${CMAKE_CURRENT_SOURCE_DIR}
   NAME "SpeedNote.qrc"
   PREFIX "qml/"
   RECURSE

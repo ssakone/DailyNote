@@ -3,6 +3,8 @@ import QtQuick.Controls as QQ
 import QtQuick.Controls.Material
 import QtQuick.Layouts
 
+import QuickFlux
+
 import Qaterial as Qaterial
 
 import SpeedNote.Components as Controls
@@ -24,7 +26,7 @@ Component {
 
         component ApplicationButton: Controls.BHomeAppButton {
             height: width
-            width: (parent.width - 30) / 3
+            width: 120
             foregroundColor: Qaterial.Colors.black
             backgroundColor: Qaterial.Colors.gray100
         }
@@ -76,9 +78,6 @@ Component {
             }
         }
 
-        NewNote {
-            id: newNote
-        }
 
         component ApplicationSettingsItem: Controls.BItemDelegate {
             property alias label: _insideText.text
@@ -103,148 +102,54 @@ Component {
             }
         }
 
-        RowLayout {
-            y: 10
-            width: parent.width - 40
-            height: 60
-            anchors.horizontalCenter: parent.horizontalCenter
-            Item {
-                Layout.fillWidth: true
-                Controls.TextLabel {
-                    text: 'SpeedNote ' + Application.version
-                    font.pixelSize: 26
-                    font.family: 'Montserrat'
-                    font.weight: Font.Medium
-                    color: Theme.Style.primaryTextColor
-                    anchors.verticalCenter: parent.verticalCenter
-                }
-            }
-        }
-
         ColumnLayout {
             spacing: 2
             anchors.fill: parent
-            anchors.topMargin: 60
+            anchors.topMargin: 0
             anchors.bottomMargin: 0
-            StackLayout  {
-                id: swipeView
+            StackView {
+                id: view
                 Layout.fillHeight: true
                 Layout.fillWidth: true
-                Layout.topMargin: 10
-                currentIndex: tabBar.currentIndex
+                initialItem: noteList
 
-                ColumnLayout {
-                    spacing: 15
-                    Item {
-                        Layout.fillHeight: true
-                        Layout.fillWidth: true
-                        Layout.rightMargin: 20
-                        Layout.leftMargin: 20
-                        Column {
-                            anchors.centerIn: parent
-                            spacing: 18
-                            Qaterial.Icon {
-                                anchors.horizontalCenter: parent.horizontalCenter
-                                color: 'transparent'
-                                icon: Providers.Icons.noActivity
-                                size: parent.parent.width / 2.3
-                            }
-                            Controls.TextLabel {
-                                anchors.horizontalCenter: parent.horizontalCenter
-                                horizontalAlignment: Label.AlignHCenter
-                                width: parent.parent.width - 60
-                                wrapMode: Label.Wrap
-                                font.pixelSize: 18
-                                text: 'Aucune activité'
-                            }
+                Connections {
+                    target: window
+                    function onClosing(event) {
+                        if(view.depth > 1) {
+                            event.accepted = false
+                            view.pop()
                         }
                     }
                 }
-
-                ColumnLayout {
-                    Controls.DR {
-                        Layout.fillHeight: true
-                        Layout.fillWidth: true
-                        Layout.topMargin: 0
-                        Layout.rightMargin: 20
-                        Layout.leftMargin: 20
-                        Flickable {
-                            anchors.fill: parent
-                            anchors.topMargin: 5
-                            contentHeight: flickable_column.height + 20
-                            clip: true
-                            Column {
-                                id: flickable_column
-                                width: parent.width
-                                spacing: 5
-                                Controls.DR {
-                                    width: children[0].width
-                                    height: 25
-                                    Controls.TextLabel {
-                                        topPadding: 5
-                                        leftPadding: 5
-                                        text: 'ACCES RAPIDE'
-                                        font.weight: Font.Normal
-                                        opacity: 1
-                                        font.pixelSize: 10
-                                    }
-                                }
-                                Flow {
-                                    width: parent.width
-                                    spacing: 10
-                                    leftPadding: 0
-                                    rightPadding: 0
-                                    ApplicationButton {
-                                        text: 'Notes list'
-                                        icon.source: Qaterial.Icons.scriptTextOutline
-                                        onClicked: m_view.push(auto_load['view-depense'])//m_view.push(page_depense)
-                                    }
-                                    ApplicationButton {
-                                        text: 'Add note'
-                                        icon.source: Qaterial.Icons.scriptOutline
-                                        onClicked: newNote.open()
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
             }
         }
 
-        Component.onCompleted: swipeView.update()
-
-
-
-
-        footer: QQ.Control {
-            id: tabBar
-            height: 70
-            width: parent.width
-            bottomInset: 0
-
-            Material.primary: Material.Red
-            property int currentIndex: 0
-            background: Rectangle {
-                //color: Qaterial.Colors.teal50
+        AppListener {
+            filter: ActionTypes.navigateTo
+            onDispatched: function(message) {
+                console.log('dispatcher send this ==> ',message)
             }
-            contentItem: RowLayout {
-                spacing: 0
-                ApplicationTabButton {
-                    index: 0
-                    iconText: 'Acceuil'
-                    iconSource: Qaterial.Icons.homeOutline
-                }
-                ApplicationTabButton {
-                    index: 1
-                    iconText: 'Outils'
-                    iconSource: Qaterial.Icons.viewGridOutline
-                }
-            }
-
-
         }
 
+        MiddlewareList {
+            applyTarget: AppAction
+
+            NoteMiddleware {
+                stack: view
+            }
+        }
+
+
+        NewNote {
+            id: newNote
+        }
+        NoteList {
+            id: noteList
+        }
+
+        NoteView {
+            id: noteView
+        }
     }
 }

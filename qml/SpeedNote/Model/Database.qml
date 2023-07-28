@@ -3,5 +3,5 @@ import QtQuick
 
 QtObject {
 	id: database
-	property string name: "inconue"
+    property string name: "note_db"
 }

@@ -6,7 +6,7 @@ import Qaterial as Qaterial
 
 QQ.Popup {
     id: popup
-    width: 300
+    width: 280
     dim: true
     padding: 24
 

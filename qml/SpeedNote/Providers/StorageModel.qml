@@ -16,6 +16,12 @@ ListModel {
     signal updated(var id)
     signal ready()
 
+    property variant beforeCreate
+    property variant beforeCreates
+    property variant beforeDelete
+    property variant beforeUpdate
+
+
     property string dbName: application_setting.user_business_name + '00'
     property string dbVersion: "1.0"
     property var db
@@ -49,6 +55,9 @@ ListModel {
     }
 
     function sqlCreate(data){
+        if (beforeCreate !== undefined) {
+            data = control.beforeCreate(data)
+        }
         return new Promise(function(resolve, reject){
             let column = [], value = [], column_str = '', completer = ''
             for(let col in data) { column.push(col) }
