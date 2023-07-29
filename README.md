@@ -1,3 +1,3 @@
-# SpeedNote
-# SpeedNote
-# SpeedNote
+# DailyNote
+
+quick note application for android
